@@ -1,0 +1,80 @@
+.confirm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.confirm__title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgb(181, 168, 150);
+    margin-bottom: 40px;
+}
+
+.confirm__form {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.confirm__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.confirm__row {
+    border-bottom: 1px solid #eee;
+}
+
+.confirm__row:last-child {
+    border-bottom: none;
+}
+
+.confirm__label {
+    width: 200px;
+    padding: 20px;
+    text-align: left;
+    vertical-align: top;
+    background-color: #b5a896;
+    color: #fff;
+    font-weight: normal;
+}
+
+.confirm__value {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.confirm__button-wrap {
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.confirm__button {
+    padding: 15px 60px;
+    background-color: #b5a896;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.confirm__button:hover {
+    opacity: 0.8;
+}
+
+.confirm__link {
+    color: #333;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.confirm__link:hover {
+    text-decoration: none;
+}
