@@ -1,49 +1,38 @@
-# contact-form-practice の実装
+# お問い合わせフォーム
 
-## 仕様書の確認
-contact-form-practice/docs内の仕様書を確認してください:
-* basic-design.pdf: システム全体の設計
-* tables.pdf: データベーステーブル定義
-* visual_design.pdf: デザイン仕様
-* design_ui/: UIデザイン素材
+お問い合わせフォームの作成と管理を行うアプリケーションです。
 
-## 命名規則
-* モデル名: アッパーキャメル
-* コントローラー名: アッパーキャメル
-* フォームリクエスト名: アッパーキャメル
-* マイグレーションファイル名: スネークケース
-* シーディングファイル名: アッパーキャメル
+## 環境構築
 
-## 認証機能
-* 使用技術: Laravel Fortify
-* 会員登録画面とログイン画面を実装
+**Dockerビルド**
 
-## バリデーション
-1. 使用技術: FormRequest
-2. バリデーションルールは basic-design.pdf の「基本設計書」シートを参照
-3. 表示仕様:
-   * エラーメッセージのテキストカラーは赤（#FF0000 または red）
-   * 「確認画面」ボタンクリック時にバリデーションエラーがあれば各項目の下にエラーメッセージを表示
+1. `git clone git@github.com:syosinsyananasi/contact-form-practice.git`
+2. `docker-compose up -d --build`
 
-## ダミーデータ作成
-1. Factory を使用し contacts テーブルにダミーデータ35件作成
-2. Seeder を使用し categories テーブルに以下5件のデータ作成:
-   * 商品のお届けについて
-   * 商品の交換について
-   * 商品トラブル
-   * ショップへのお問い合わせ
-   * その他
+**Laravel環境構築**
 
-## 実装する画面
-1. お問い合わせ入力画面
-2. お問い合わせ確認画面
-3. サンクスページ
-4. 会員登録画面
-5. ログイン画面
-6. 管理画面 - 認証必須
-7. 管理モーダル画面
+1. `docker-compose exec php bash`
+2. `composer install`
+3. `.env.example`ファイルから`.env`を作成し、環境変数を変更
+4. `php artisan key:generate`
+5. `php artisan migrate`
+6. `php artisan db:seed`
 
-## 追加要件
-* visual_design.pdf と design_ui/ に従ってスタイリングを実装
-* ルーティングは RESTful な設計にすること
-* すべてのファイルは上記の命名規則に従うこと
+## 使用技術（実行環境）
+
+- PHP 8.1
+- Laravel 8.75
+- MySQL 8.0.26
+- nginx 1.21.1
+
+## ER図
+
+![ER図](docs/relation.drawio.png)
+
+## URL
+
+### 開発環境
+
+- お問い合わせ画面: http://localhost/
+- ユーザー登録: http://localhost/register
+- phpMyAdmin: http://localhost:8080/
