@@ -63,7 +63,9 @@ class FortifyServiceProvider extends ServiceProvider
                 return $user;
             }
 
-            return null;
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'password' => [trans('auth.failed')],
+            ]);
         });
     }
 }
